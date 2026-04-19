@@ -1,0 +1,17 @@
+name: call worker
+
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Worker repeatedly
+        run: |
+          for i in {1..6}
+          do
+            curl https://discordapp.com/api/webhooks/1495439245853331526/vm06qPMY37i5F3UNxAJ035VGTJBFb5MrSbKGWe6ysfqdzB9eh7aglrr8d0WWp1Vawv1a
+            sleep 10
+          done
